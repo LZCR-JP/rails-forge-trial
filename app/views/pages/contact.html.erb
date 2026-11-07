@@ -1,0 +1,23 @@
+<h1>Contact us</h1>
+
+<form action="/contact" method="get">
+    <label for="member">Please type a name...</label>
+    <input
+    type="text"
+    name="member"
+    id="member"
+    value="<%= params[:member] %>"
+    placeholder="Who are you looking for?"
+    >
+    <input type="submit">
+</form>
+
+<p>This is our team:</p>
+
+<ol>
+    <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+    <% end %>
+</ol>
+
+<button btn-primary><%= link_to "Home", root_path %></button>
